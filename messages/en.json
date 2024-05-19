@@ -4,7 +4,6 @@
 		"locale": "{locale, select, tr {TR} en {EN} other {Unknown}}"
 	},
 	"Index": {
-		"title": "Hello world!",
 		"description": "You can play the game in Turkish or English if you want. Words with some missing letters appear on the screen and are waiting for you to fill in the missing letters. Enjoy!",
 		"play": "Play"
 	},
@@ -14,12 +13,6 @@
 
 	"Game": {
 		"score": "Score",
-		"word": "Word",
-		"next": "Next",
-		"game-desc": "Complete this word with some letters missing and earn points! For every correct word you get 10 points and +15 seconds. Enjoy!",
-		"finish": "Finish",
-		"congratulations": "Congratulations!",
-		"scoreMessage": "You have completed the game with a score of {score}.",
-		"playAgain": "Play Again"
+		"game-desc": "Complete this word with some letters missing and earn points! For every correct word you get 10 points and +15 seconds. Enjoy!"
 	}
 }

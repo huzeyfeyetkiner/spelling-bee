@@ -4,7 +4,6 @@
 		"locale": "{locale, select, tr {TR} en {EN} other {Unknown}}"
 	},
 	"Index": {
-		"title": "Merhaba dünya!",
 		"description": "Oyunu isterseniz Türkçe, isterseniz İngilizce oynayabilirsiniz. Ekranda bazı harfleri eksik kelimeler çıkar ve sizden eksik harfleri tamamlamanızı bekler. İyi eğlenceler!",
 		"play": "Oyna"
 	},
@@ -14,10 +13,6 @@
 	},
 	"Game": {
 		"score": "Puan",
-		"game-desc": "Bazı harfleri eksik verilmiş bu kelimeyi tamamla ve puan kazan! Her doğru kelime için 10 puan ve +15 saniye kazanırsın. İyi eğlenceler!",
-		"word": "Kelime",
-		"next": "Sonraki",
-		"gameOver": "Oyun bitti!",
-		"restart": "Yeniden başla"
+		"game-desc": "Bazı harfleri eksik verilmiş bu kelimeyi tamamla ve puan kazan! Her doğru kelime için 10 puan ve +15 saniye kazanırsın. İyi eğlenceler!"
 	}
 }
