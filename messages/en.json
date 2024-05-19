@@ -16,6 +16,7 @@
 		"score": "Score",
 		"word": "Word",
 		"next": "Next",
+		"game-desc": "Complete this word with some letters missing and earn points! For every correct word you get 10 points and +15 seconds. Enjoy!",
 		"finish": "Finish",
 		"congratulations": "Congratulations!",
 		"scoreMessage": "You have completed the game with a score of {score}.",

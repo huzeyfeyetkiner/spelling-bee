@@ -14,6 +14,7 @@
 	},
 	"Game": {
 		"score": "Puan",
+		"game-desc": "Bazı harfleri eksik verilmiş bu kelimeyi tamamla ve puan kazan! Her doğru kelime için 10 puan ve +15 saniye kazanırsın. İyi eğlenceler!",
 		"word": "Kelime",
 		"next": "Sonraki",
 		"gameOver": "Oyun bitti!",
