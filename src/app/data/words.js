@@ -26,11 +26,11 @@ export const words = {
 		},
 		{
 			word: "armut",
-			hive: "r-m-t",
+			hive: "-r-m-t",
 		},
 		{
 			word: "üzüm",
-			hive: "z-m",
+			hive: "-z-m",
 		},
 		{
 			word: "kiraz",
@@ -70,7 +70,7 @@ export const words = {
 		},
 		{
 			word: "ananas",
-			hive: "n-n-s",
+			hive: "-n-n-s",
 		},
 		{
 			word: "dut",
