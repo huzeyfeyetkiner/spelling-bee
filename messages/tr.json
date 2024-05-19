@@ -1,0 +1,22 @@
+{
+	"LocaleSwitcher": {
+		"label": "Change language",
+		"locale": "{locale, select, tr {TR} en {EN} other {Unknown}}"
+	},
+	"Index": {
+		"title": "Merhaba dünya!",
+		"description": "Oyunu isterseniz Türkçe, isterseniz İngilizce oynayabilirsiniz. Ekranda bazı harfleri eksik kelimeler çıkar ve sizden eksik harfleri tamamlamanızı bekler. İyi eğlenceler!",
+		"play": "Oyna"
+	},
+
+	"Navbar": {
+		"title": "Kelime Oyunu"
+	},
+	"Game": {
+		"score": "Puan",
+		"word": "Kelime",
+		"next": "Sonraki",
+		"gameOver": "Oyun bitti!",
+		"restart": "Yeniden başla"
+	}
+}
