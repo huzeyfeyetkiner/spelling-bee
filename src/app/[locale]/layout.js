@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 	const { locale } = params
 
 	return {
-		title: locale === "en" ? "Spelling Bee Game" : "Heceleme Oyunu",
+		title: locale === "en" ? "Spelling Bee Game" : "Kelime Oyunu",
 	}
 }
 
