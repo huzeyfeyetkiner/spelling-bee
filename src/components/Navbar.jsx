@@ -14,7 +14,7 @@ function Navbar() {
 					{t("title")}
 				</h1>
 			</Link>
-			<div className="absolute right-10 flex">
+			<div className="flex items-center justify-center mt-4 lg:absolute lg:right-5">
 				<LocaleSwitcher />
 				<Link
 					href={"https://github.com/huzeyfeyetkiner"}
