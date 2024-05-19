@@ -12,7 +12,12 @@ function GameCard({ locale }) {
 	const [selectedWords, setSelectedWords] = useState([]) // will be fillfull after shuffle
 	const [timeLeft, setTimeLeft] = useState(60)
 
+	const [gameOn, setGameOn] = useState(true)
+
 	const checkGuess = () => {
+		if (counter > 7) {
+			setGameOn(false)
+		}
 		if (guess === wordList[counter].word) {
 			setScore(score + 10)
 			setTimeLeft((prevTime) => prevTime + 15)
@@ -35,15 +40,15 @@ function GameCard({ locale }) {
 	}, [locale, wordList])
 
 	useEffect(() => {
-		if (timeLeft > 0) {
+		if (timeLeft > 0 && counter < 7) {
 			const timer = setInterval(() => {
 				setTimeLeft((prevTime) => prevTime - 1)
 			}, 1000)
 			return () => clearInterval(timer)
 		} else {
-			alert(locale === "tr" ? "Süre doldu!" : "Time's up!")
+			setGameOn(false)
 		}
-	}, [timeLeft, locale])
+	}, [timeLeft, locale, counter])
 
 	const formatTime = (seconds) => {
 		const minutes = Math.floor(seconds / 60)
@@ -62,7 +67,7 @@ function GameCard({ locale }) {
 				{formatTime(timeLeft)}
 			</h1>
 
-			<h1 className="absolute top-5 left-5 text-2xl text-color-text font-bold">
+			<h1 className="absolute top-5 left-5 text-3xl text-color-text font-bold">
 				{locale === "tr" ? "Skorun" : "Your Score"}: {score}
 			</h1>
 			<div className="flex items-center justify-center gap-4 mt-6">
@@ -73,6 +78,23 @@ function GameCard({ locale }) {
 					></WordHive>
 				))}
 			</div>
+
+			{(counter === 7 || timeLeft === 0) && (
+				<div className="flex flex-col justify-center items-center gap-y-5">
+					<h1 className="text-2xl text-color-text text-center">
+						{locale === "tr"
+							? `Oyun Bitti, Skorun:${score}`
+							: `The Game Has Ended Your score: ${score}`}
+					</h1>
+
+					<button
+						className="bg-color-btn text-white rounded-xl py-3 px-12 hover:bg-opacity-60 transition-all ease-in-out duration-300"
+						onClick={restartGame}
+					>
+						{locale === "tr" ? "Yeniden Oyna" : "Restart Game"}
+					</button>
+				</div>
+			)}
 			<input
 				className="w-1/2 p-2 text-black rounded-lg outline-none"
 				type="text"
@@ -84,7 +106,7 @@ function GameCard({ locale }) {
 			/>
 
 			<button
-				className="bg-color-btn text-white rounded-xl py-3 px-12 hover:bg-opacity-60 transition-all ease-in-out duration-300"
+				className="bg-color-btn text-white rounded-xl py-3 px-12 hover:bg-opacity-60 transition-all ease-in-out duration-300 disabled:bg-opacity-50 disabled:cursor-not-allowed"
 				onClick={checkGuess}
 				disabled={counter === 7 || timeLeft === 0}
 			>
