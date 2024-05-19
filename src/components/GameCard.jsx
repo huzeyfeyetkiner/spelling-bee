@@ -57,20 +57,22 @@ function GameCard({ locale }) {
 	}
 
 	return (
-		<div className="relative w-1/2 min-w-fit flex flex-col items-center justify-center bg-[#242525] p-12 gap-y-12 rounded-xl">
-			<h1 className="absolute top-5 right-5 text-2xl text-color-text font-bold">
-				{counter + 1}/{7}
-			</h1>
+		<div className="w-1/2 min-w-fit flex flex-col items-center justify-center bg-[#242525] p-4 md:p-12 gap-y-12 rounded-xl">
+			<div className="flex flex-col justify-center items-center gap-y-4">
+				<h1 className=" text-2xl text-color-text font-bold">
+					{locale === "tr" ? "Kalan Süre" : "Time Left"}:{" "}
+					{formatTime(timeLeft)}
+				</h1>
 
-			<h1 className="absolute top-5 text-2xl text-color-text font-bold">
-				{locale === "tr" ? "Kalan Süre" : "Time Left"}:{" "}
-				{formatTime(timeLeft)}
-			</h1>
+				<h1 className=" left-5 text-3xl text-color-text font-bold">
+					{locale === "tr" ? "Skorun" : "Your Score"}: {score}
+				</h1>
+				<h1 className="text-2xl text-color-text font-bold">
+					{counter + 1}/{7}
+				</h1>
+			</div>
 
-			<h1 className="absolute top-5 left-5 text-3xl text-color-text font-bold">
-				{locale === "tr" ? "Skorun" : "Your Score"}: {score}
-			</h1>
-			<div className="flex items-center justify-center gap-4 mt-6">
+			<div className="flex items-center justify-center gap-1 md:gap-2 mt-6">
 				{selectedWords[counter]?.hive.split("").map((char, index) => (
 					<WordHive
 						key={index}
@@ -88,7 +90,7 @@ function GameCard({ locale }) {
 					</h1>
 
 					<button
-						className="bg-color-btn text-white rounded-xl py-3 px-12 hover:bg-opacity-60 transition-all ease-in-out duration-300"
+						className="bg-white text-black rounded-xl py-3 px-12 hover:bg-opacity-60 transition-all ease-in-out duration-300"
 						onClick={restartGame}
 					>
 						{locale === "tr" ? "Yeniden Oyna" : "Restart Game"}
@@ -112,19 +114,6 @@ function GameCard({ locale }) {
 			>
 				{locale === "tr" ? "Tahmin Et" : "Guess"}
 			</button>
-
-			{counter === 7 ||
-				(timeLeft === 0 && (
-					<div className="flex flex-col flex-1 justify-center items-center">
-						<h1 className="text-2xl text-color-text">Time is up</h1>
-						<button
-							className="bg-white text-black rounded-xl py-3 px-12 hover:bg-opacity-60 transition-all ease-in-out duration-300 mt-3"
-							onClick={restartGame}
-						>
-							{locale === "tr" ? "Tekrar Oyna" : "Restart"}
-						</button>
-					</div>
-				))}
 		</div>
 	)
 }
